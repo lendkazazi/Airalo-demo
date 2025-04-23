@@ -10,6 +10,7 @@ import SwiftUI
 
 enum FontType: String {
     case semiBold    = "IBMPlexSans-SemiBold"
+    case bold        = "IBMPlexSans-Bold"
     case medium      = "IBMPlexSans-Medium"
     case regular     = "IBMPlexSans-Regular"
 }
