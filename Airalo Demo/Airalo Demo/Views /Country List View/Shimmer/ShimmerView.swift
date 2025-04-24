@@ -2,7 +2,7 @@
 //  ShimmerView.swift
 //  Airalo Demo
 //
-//  Created by Baboon on 20.4.25.
+//  Created by Lend Kazazi on 20.4.25.
 //
 
 import Foundation
@@ -15,7 +15,7 @@ struct ShimmerView: View {
         RoundedRectangle(cornerRadius: AiraloConstants.CountryList.Layout.cornerRadius)
             .fill(Color.gray.opacity(0.2))
             .frame(height: AiraloConstants.CountryList.Layout.rowHeight)
-            .padding(.horizontal, AiraloConstants.CountryList.Layout.horizontalPadding)
+            .padding(.horizontal, AiraloConstants.Shared.Layout.horizontalPadding)
             .padding(.vertical, AiraloConstants.CountryList.Spacing.listItemSpacing)
             .shimmer(isActive: true)
     }

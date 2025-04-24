@@ -2,7 +2,7 @@
 //  CountryListViewModel.swift
 //  Airalo Demo
 //
-//  Created by Baboon on 20.4.25.
+//  Created by Lend Kazazi on 20.4.25.
 //
 
 import Foundation
@@ -21,7 +21,7 @@ class CountryListViewModel: ObservableObject {
                 case .success(let countries):
                     self.countries = countries
                 case .failure:
-                    self.error = "Failed to load countries"
+                    self.error = Localizable.fetchFailed
                 }
             }
             }

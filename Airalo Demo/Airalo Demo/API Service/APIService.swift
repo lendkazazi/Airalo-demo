@@ -2,7 +2,7 @@
 //  APIService.swift
 //  Airalo Demo
 //
-//  Created by Baboon on 20.4.25.
+//  Created by Lend Kazazi on 20.4.25.
 //
 
 import Foundation
@@ -13,7 +13,10 @@ class APIService {
     private init() {}
     
     func fetch<T: Decodable>(_ endpoint: Endpoint, type: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
-        let url = endpoint.url
+        guard let url = endpoint.url else {
+            completion(.failure(NSError(domain: "Something went wrong", code: -1, userInfo: nil)))
+            return
+        }
         URLSession.shared.dataTask(with: url) { data, response, error in
             DispatchQueue.main.async {
                 if let error = error {

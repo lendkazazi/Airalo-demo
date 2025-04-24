@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Airalo Demo
+
+  Created by Lend Kazazi on 24.4.25.
+  
+*/
+
+"hello" = "Hello";
+"popular_countries" = "Popular Countries";
+"buy_now_format" = "$%@ – BUY NOW";
+"fetch_failed" = "Something went wrong. Tap to retry.";
+"data" = "DATA";
+"validity" = "VALIDITY";
+"rety" = "Retry";

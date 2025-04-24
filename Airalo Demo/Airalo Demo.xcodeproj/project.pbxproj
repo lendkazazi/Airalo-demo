@@ -58,6 +58,11 @@
 			path = "Airalo DemoUITests";
 			sourceTree = "<group>";
 		};
+		F8B2900C2DBA103E0043FDFE /* Localization */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Localization;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +93,7 @@
 		F8AC2FB72DB38691002CF391 = {
 			isa = PBXGroup;
 			children = (
+				F8B2900C2DBA103E0043FDFE /* Localization */,
 				F8AC2FC22DB38691002CF391 /* Airalo Demo */,
 				F8AC2FD42DB38692002CF391 /* Airalo DemoTests */,
 				F8AC2FDE2DB38693002CF391 /* Airalo DemoUITests */,
@@ -122,6 +128,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				F8AC2FC22DB38691002CF391 /* Airalo Demo */,
+				F8B2900C2DBA103E0043FDFE /* Localization */,
 			);
 			name = "Airalo Demo";
 			packageProductDependencies = (

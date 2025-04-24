@@ -2,7 +2,7 @@
 //  Airalo_DemoUITests.swift
 //  Airalo DemoUITests
 //
-//  Created by Baboon on 19.4.25.
+//  Created by Lend Kazazi on 19.4.25.
 //
 
 import XCTest
