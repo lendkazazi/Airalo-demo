@@ -19,14 +19,20 @@ struct CountryListView: View  {
                     shimmerList
                 } else if let errorMessage = viewModel.error {
                     ErrorView(errorMessage: errorMessage) {
-                        viewModel.fetchCountries()
+                        Task {
+                            await viewModel.fetchCountries()
+                        }
                     }
                 } else {
                     countryList
                 }
             }
             .navigationTitle(Localizable.hello)
-            .onAppear { viewModel.fetchCountries() }
+            .onAppear {
+                Task {
+                    await viewModel.fetchCountries()
+                }
+            }
             
             .navigationDestination(for: CountryModel.self) { country in
                 CountryDetailView(country: country)

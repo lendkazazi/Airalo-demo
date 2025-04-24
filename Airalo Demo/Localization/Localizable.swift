@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Localizable {
+struct Localizable {
     static var hello: String {
         NSLocalizedString("hello",
                           comment: "Initial navigation bar title")
