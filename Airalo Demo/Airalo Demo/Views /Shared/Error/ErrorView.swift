@@ -2,18 +2,19 @@
 //  ErrorView.swift
 //  Airalo Demo
 //
-//  Created by Baboon on 20.4.25.
+//  Created by Lend Kazazi on 20.4.25.
 //
 
 import Foundation
 import SwiftUI
 
 struct ErrorView: View {
+    let errorMessage: String
     let retryAction: () -> Void
 
     var body: some View {
         VStack(spacing: AiraloConstants.CountryList.Spacing.errorSpacing) {
-            Text("Something went wrong")
+            Text(errorMessage)
                 .typography(
                     .medium,
                     size: 18,
@@ -22,7 +23,7 @@ struct ErrorView: View {
                     color: AppColor.textPrimary.color
                 )
             Button(action: retryAction) {
-                Text("Retry")
+                Text(Localizable.retry)
                     .typography(
                         .medium,
                         size: 18,
@@ -30,7 +31,7 @@ struct ErrorView: View {
                         letterSpacing: 0,
                         color: .white
                     )
-                    .frame(maxWidth: 120, minHeight: AiraloConstants.CountryList.Layout.buttonHeight)
+                    .frame(maxWidth: 120, minHeight: AiraloConstants.Shared.Layout.buttonHeight)
                     .background(
                         LinearGradient(
                             gradient: Gradient(colors: [
@@ -42,7 +43,7 @@ struct ErrorView: View {
                         )
                     )
                     .foregroundColor(.white)
-                    .cornerRadius(AiraloConstants.CountryList.Layout.buttonHeight / 2)
+                    .cornerRadius(AiraloConstants.Shared.Layout.buttonHeight / 2)
             }
         }
     }

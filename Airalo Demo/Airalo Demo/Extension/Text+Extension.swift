@@ -2,7 +2,7 @@
 //  Typography.swift
 //  Airalo Demo
 //
-//  Created by Baboon on 23.4.25.
+//  Created by Lend Kazazi on 23.4.25.
 //
 
 import Foundation

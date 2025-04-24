@@ -2,12 +2,12 @@
 //  CountryModel.swift
 //  Airalo Demo
 //
-//  Created by Baboon on 20.4.25.
+//  Created by Lend Kazazi on 20.4.25.
 //
 
 import Foundation
 
-struct CountryModel: Identifiable, Decodable {
+struct CountryModel: Identifiable, Decodable, Hashable {
     let id: Int
     let slug: String
     let title: String

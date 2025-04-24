@@ -2,7 +2,7 @@
 //  Endpoint.swift
 //  Airalo Demo
 //
-//  Created by Baboon on 20.4.25.
+//  Created by Lend Kazazi on 20.4.25.
 //
 
 import Foundation
@@ -20,7 +20,7 @@ enum Endpoint {
         }
     }
 
-    var url: URL {
-        return URL(string: API.baseURL + path)!
+    var url: URL? {
+        return URL(string: API.baseURL + path)
     }
 }

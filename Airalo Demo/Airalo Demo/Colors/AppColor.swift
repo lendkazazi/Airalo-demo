@@ -2,7 +2,7 @@
 //  Colors.swift
 //  Airalo Demo
 //
-//  Created by Baboon on 23.4.25.
+//  Created by Lend Kazazi on 23.4.25.
 //
 
 import Foundation
@@ -14,8 +14,9 @@ enum AppColor: String {
     case textPrimary            = "text-primary-color"
     case buttonLeadingGradient  = "button-leading-gradient"
     case buttonTrailingGradient = "button-trailing-gradient"
+    case packageLeadingGradient = "package-leading-gradient"
+    case packageTrailingGradient = "package-trailing-gradient"
 
-    /// Get the SwiftUI Color from your asset catalog
     var color: Color {
         Color(rawValue)
     }

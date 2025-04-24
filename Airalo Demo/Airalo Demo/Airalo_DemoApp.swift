@@ -2,7 +2,7 @@
 //  Airalo_DemoApp.swift
 //  Airalo Demo
 //
-//  Created by Baboon on 19.4.25.
+//  Created by Lend Kazazi on 19.4.25.
 //
 
 import SwiftUI
@@ -10,36 +10,45 @@ import SwiftUI
 @main
 struct Airalo_DemoApp: App {
     init() {
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithTransparentBackground()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor(named: "navigation-background")
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
         
-        let para = NSMutableParagraphStyle()
-        para.minimumLineHeight = 32
-        para.maximumLineHeight = 32
+        navBarAppearance.backgroundColor = UIColor(named: "navigation-background")
+        navBarAppearance.shadowColor = .clear
         
-        let largeFont = UIFont(name: "IBMPlexSans-SemiBold", size: 27) ?? UIFont.systemFont(ofSize: 27, weight: .semibold)
+        let largePara = NSMutableParagraphStyle()
+        largePara.minimumLineHeight = 32
+        largePara.maximumLineHeight = 32
         
-        appearance.largeTitleTextAttributes = [
-            .font: largeFont,
-            .foregroundColor: UIColor(named: "text-primary-color") ?? .black,
+        navBarAppearance.largeTitleTextAttributes = [
+            .font: UIFont(name: "IBMPlexSans-SemiBold", size: 27)!
+                ,
+            .foregroundColor: UIColor(named: "text-primary-color")!,
             .kern: -0.5,
-            .paragraphStyle: para
+            .paragraphStyle: largePara
+        ]
+        navBarAppearance.titleTextAttributes = [
+            .font: UIFont(name: "IBMPlexSans-SemiBold", size: 18)!,
+            .foregroundColor: UIColor(named: "text-primary-color")!
         ]
         
-        appearance.titleTextAttributes = [
-            .font: UIFont(name: "IBMPlexSans-SemiBold", size: 18) ?? UIFont.systemFont(ofSize: 18, weight: .semibold),
-            .foregroundColor: UIColor(named: "text-primary-color") ?? .black
+        let backButtonAppearance = UIBarButtonItemAppearance()
+        backButtonAppearance.normal.titleTextAttributes = [
+            .foregroundColor: UIColor.clear
         ]
-
-        UINavigationBar.appearance().standardAppearance = appearance
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        navBarAppearance.backButtonAppearance = backButtonAppearance
+        
+        UINavigationBar.appearance().standardAppearance = navBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+        UINavigationBar.appearance().compactAppearance = navBarAppearance
+        
+        UINavigationBar.appearance().tintColor = UIColor(named: "text-primary-color")
     }
     
     var body: some Scene {
         WindowGroup {
             CountryListView()
+                .accentColor(AppColor.textPrimary.color)
         }
     }
 }
