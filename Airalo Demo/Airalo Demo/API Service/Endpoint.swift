@@ -20,7 +20,7 @@ enum Endpoint {
         }
     }
 
-    var url: URL? {
-        return URL(string: API.baseURL + path)
+    var url: URL {
+        return URL(string: API.baseURL + path)!
     }
 }

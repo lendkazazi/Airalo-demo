@@ -18,7 +18,9 @@ struct CountryDetailView: View {
                 loadingList
             } else if let errorMessage = viewModel.error {
                 ErrorView(errorMessage: errorMessage) {
-                    viewModel.fetchPackagesForCountry(id: String(country.id))
+                    Task {
+                        await viewModel.fetchPackagesForCountry(id: String(country.id))
+                    }
                 }
             } else {
                 packageList
@@ -27,7 +29,9 @@ struct CountryDetailView: View {
         .navigationTitle(country.title)
         .navigationBarTitleDisplayMode(.large)
         .onAppear {
-            viewModel.fetchPackagesForCountry(id: String(country.id))
+            Task {
+                await viewModel.fetchPackagesForCountry(id: String(country.id))
+            }
         }
     }
 

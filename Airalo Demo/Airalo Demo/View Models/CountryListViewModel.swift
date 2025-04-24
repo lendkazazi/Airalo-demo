@@ -7,23 +7,20 @@
 
 import Foundation
 
+@MainActor
 class CountryListViewModel: ObservableObject {
     @Published var countries: [CountryModel] = []
     @Published var isLoading = true
     @Published var error: String?
 
-    func fetchCountries() {
+    func fetchCountries() async {
         self.isLoading = true
-        APIService.shared.fetch(.countries, type: [CountryModel].self) { result in
-            DispatchQueue.main.async {
-                self.isLoading = false
-                switch result {
-                case .success(let countries):
-                    self.countries = countries
-                case .failure:
-                    self.error = Localizable.fetchFailed
-                }
-            }
-            }
+      do {
+          self.countries = try await APIService.shared.fetch(.countries, as: [CountryModel].self)
+          self.error = nil
+      } catch {
+          self.error = Localizable.fetchFailed
+      }
+        self.isLoading = false
     }
 }
