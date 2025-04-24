@@ -9,13 +9,14 @@ import Foundation
 import SwiftUI
 
 enum AppColor: String {
-    case mainBackground         = "main-background"
-    case navigationBackground   = "navigation-background"
-    case textPrimary            = "text-primary-color"
-    case buttonLeadingGradient  = "button-leading-gradient"
-    case buttonTrailingGradient = "button-trailing-gradient"
-    case packageLeadingGradient = "package-leading-gradient"
+    case mainBackground          = "main-background"
+    case navigationBackground    = "navigation-background"
+    case textPrimary             = "text-primary-color"
+    case buttonLeadingGradient   = "button-leading-gradient"
+    case buttonTrailingGradient  = "button-trailing-gradient"
+    case packageLeadingGradient  = "package-leading-gradient"
     case packageTrailingGradient = "package-trailing-gradient"
+    case packageTextPrimary      = "package-text-color"
 
     var color: Color {
         Color(rawValue)

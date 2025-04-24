@@ -25,8 +25,8 @@ struct PackageCardView: View {
     private var backgroundGradient: some View {
         LinearGradient(
             gradient: Gradient(colors: [
-                AppColor.packageLeadingGradient.color,
-                AppColor.packageTrailingGradient.color
+                Color(hex: package.operatorInfo.gradientStart),
+                Color(hex: package.operatorInfo.gradientEnd)
             ]),
             startPoint: .leading,
             endPoint: .trailing
@@ -65,7 +65,7 @@ struct PackageCardView: View {
                     size: 19,
                     lineHeight: 22,
                     letterSpacing: -0.2,
-                    color: AppColor.textPrimary.color
+                    color: AppColor.packageTextPrimary.color
                 )
 
             Text(package.operatorInfo.countries.first?.title ?? "")
@@ -74,7 +74,7 @@ struct PackageCardView: View {
                     size: 13,
                     lineHeight: 20,
                     letterSpacing: 0,
-                    color: AppColor.textPrimary.color
+                    color: AppColor.packageTextPrimary.color
                 )
         }
     }
@@ -82,7 +82,7 @@ struct PackageCardView: View {
     private var dataSection: some View {
         HStack {
             Image("AIRALO_PACKAGE_DATA_ICON")
-                .foregroundColor(AppColor.textPrimary.color)
+                .foregroundColor(AppColor.packageTextPrimary.color)
 
             Text(Localizable.data)
                 .typography(
@@ -90,7 +90,7 @@ struct PackageCardView: View {
                     size: 11,
                     lineHeight: 14,
                     letterSpacing: 1,
-                    color: AppColor.textPrimary.color
+                    color: AppColor.packageTextPrimary.color
                 )
 
             Spacer()
@@ -101,7 +101,7 @@ struct PackageCardView: View {
                     size: 17,
                     lineHeight: 20,
                     letterSpacing: -0.1,
-                    color: AppColor.textPrimary.color
+                    color: AppColor.packageTextPrimary.color
                 )
         }
     }
@@ -109,7 +109,7 @@ struct PackageCardView: View {
     private var validitySection: some View {
         HStack {
             Image("AIRALO_PACKAGE_VALIDITY_ICON")
-                .foregroundColor(AppColor.textPrimary.color)
+                .foregroundColor(AppColor.packageTextPrimary.color)
 
             Text(Localizable.validity)
                 .typography(
@@ -117,7 +117,7 @@ struct PackageCardView: View {
                     size: 11,
                     lineHeight: 14,
                     letterSpacing: 1,
-                    color: AppColor.textPrimary.color
+                    color: AppColor.packageTextPrimary.color
                 )
 
             Spacer()
@@ -128,7 +128,7 @@ struct PackageCardView: View {
                     size: 17,
                     lineHeight: 20,
                     letterSpacing: -0.1,
-                    color: AppColor.textPrimary.color
+                    color: AppColor.packageTextPrimary.color
                 )
         }
     }
@@ -141,7 +141,7 @@ struct PackageCardView: View {
                     size: 11,
                     lineHeight: 14,
                     letterSpacing: 1,
-                    color: AppColor.textPrimary.color
+                    color: AppColor.packageTextPrimary.color
                 )
                 .frame(
                     maxWidth: .infinity,
@@ -153,7 +153,7 @@ struct PackageCardView: View {
             RoundedRectangle(
                 cornerRadius: AiraloConstants.PackageCard.Layout.buttonCornerRadius
             )
-            .stroke(AppColor.textPrimary.color, lineWidth: 1)
+            .stroke(AppColor.packageTextPrimary.color, lineWidth: 1)
         )
         .cornerRadius(AiraloConstants.PackageCard.Layout.buttonCornerRadius)
     }
